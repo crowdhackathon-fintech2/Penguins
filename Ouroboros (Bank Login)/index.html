@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Omniscient ~ Login Page</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+
+		<!-- CSS -->
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		
+		<div class="logo">
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-4">
+					<span class="input input--hoshi">
+						<input class="input__field input__field--hoshi" type="text" id="input-4" />
+						<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+							<span class="input__label-content input__label-content--hoshi user-label">Username</span>
+						</label>
+					</span>
+					<span class="input input--hoshi">
+						<input class="input__field input__field--hoshi" type="password" id="input-4" />
+						<label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+							<span class="input__label-content input__label-content--hoshi pw-label">Password</span>
+						</label>
+					</span>
+
+					<span>
+							<span class="forget">Forget password?</span>
+							<button type="button" class="btn">LOG IN</button>
+						
+					</span>
+				</div>
+
+
+
+				<div class="col-8 loginSplash">
+					<div class="half-center">
+						<h1 class="text-justify">
+							Welcome to <span class="font-weight-bold">Ouroboros</span>
+						</h1>
+						<span class="mini-font-size">Login to access your account</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<p class="version">Version 0.21.8</p>
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script>
+		$(document).ready(function() {
+			$(".logo").height($(".logo").width());
+			$(".input__field").blur(function() {
+				if ($(this).val().length > 0) {
+					if ($(this).attr("type") == 'text') {
+						$('.user-label').addClass('input--filled');
+					} else {
+						$('.pw-label').addClass('input--filled');
+					}
+				} else {
+					if ($(this).attr("type") == 'text') {
+						$('.user-label').removeClass('input--filled');
+					} else {
+						$('.pw-label').removeClass('input--filled');
+					}
+				}
+			});
+			setTimeout(function() {
+				//location.reload();
+			},5000);
+			$(window).resize(function() {
+				$(".logo").height($(".logo").width());
+			});
+		});
+		</script>
+	</body>
+</html>
